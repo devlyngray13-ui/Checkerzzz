@@ -1,0 +1,13 @@
+{
+  "name": "BONELAB Quest FOV",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:1-6.0-bookworm",
+  "features": {},
+  "postCreateCommand": "dotnet --info && dotnet restore",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csdevkit"
+      ]
+    }
+  }
+}

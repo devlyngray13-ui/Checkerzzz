@@ -1,0 +1,19 @@
+name: Build QuestFOV
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+      - run: dotnet build QuestFOV.csproj -c Release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: QuestFOV
+          path: bin/Release/net6.0/QuestFOV.dll
